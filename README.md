@@ -1,40 +1,106 @@
-# WeCare Healthcare Website — Starter Full-Stack Project
+# WeCare – Healthcare Website
 
-This project keeps your existing HTML/CSS frontend and adds a Node.js/Express API with MongoDB.
+WeCare is a full-stack healthcare website designed to help users explore healthcare services, search for doctors, and submit appointment requests.
 
-## Requirements
-- Node.js LTS installed
-- MongoDB Community Server running locally, OR a MongoDB Atlas connection string
-- Internet connection for the existing Font Awesome CDN
+## Key Features
 
-## Setup on Windows
-1. Install Node.js LTS from https://nodejs.org/ and restart your terminal.
-2. Install MongoDB Community Server from https://www.mongodb.com/try/download/community and start the MongoDB service, OR create a MongoDB Atlas cluster.
-3. Extract this project folder.
-4. Open the folder in VS Code.
-5. Open Terminal > New Terminal.
-6. Run `npm install`
-7. Copy `.env.example` to a new file named `.env`.
-8. For a local MongoDB server, leave `MONGODB_URI=mongodb://127.0.0.1:27017/wecare`.
-   For Atlas, replace it with your Atlas connection string. Keep the password private.
-9. Run `npm run dev` (or `npm start`).
-10. Open http://localhost:3000 in your browser. Do not open index.html directly from File Explorer.
+- User-friendly healthcare website interface
+- Doctor search by name and medical specialty
+- Doctor search by location
+- Online appointment request submission
+- Newsletter subscription
+- Contact and enquiry form
+- Backend API integration
+- MongoDB database integration
+- Input validation and error handling
 
-## API endpoints
-- GET `/api/health` — check that the API is running
-- GET `/api/doctors` — list doctors
-- GET `/api/doctors?search=cardio` — search name/specialty
-- GET `/api/doctors?location=WeCare` — filter location
-- POST `/api/appointments` — create an appointment request
-- POST `/api/newsletter` — subscribe an email
-- POST `/api/enquiries` — save a contact enquiry (API is ready; the current HTML does not yet contain a contact form)
+## Technologies Used
 
-## Testing
-Open http://localhost:3000/api/health. Expected JSON:
-`{"status":"ok","message":"WeCare API is running"}`
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
 
-The first run inserts five sample doctors if the doctors collection is empty.
-Appointments are created with `pending` status; this demo does not confirm bookings automatically.
+**Backend**
+- Node.js
+- Express.js
 
-## Important before public deployment
+**Database**
+- MongoDB
+- Mongoose
+
+**Additional Library**
+- Nodemailer (installed in the project)
+
+## Project Structure
+
+```text
+wecare-fullstack/
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   └── photos/
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
+
+## Installation and Setup
+
+1. Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+2. Navigate to the project folder:
+
+```bash
+cd wecare-healthcare-website
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Create a `.env` file in the project root and configure your MongoDB connection:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=3000
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+6. Open your browser:
+
+```text
+http://localhost:3000
+```
+
+## Learning Outcomes
+
+- Practical experience in full-stack web development
+- Connecting frontend applications with backend APIs
+- Working with MongoDB and Mongoose
+- Implementing form submissions and data validation
+- Managing project dependencies using npm
+
+## Project Status
+
+Developed as a hands-on full-stack web development project. Further improvements and enhancements are planned.
+
+## Author
+
+Developed as a personal learning project.
+
 This is a learning/demo starter, not a production medical system. It does not include login, an admin dashboard, email/SMS notifications, payment, doctor availability scheduling, or protection against double-booking. Do not collect real patient medical information until you have added proper authentication, authorization, HTTPS, privacy/security controls, backups, and any legally required safeguards. Do not expose database credentials or publish `.env`.
